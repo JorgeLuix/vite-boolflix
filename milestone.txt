@@ -21,5 +21,11 @@ MILESTONE2
 
    Per quanto riguarda la connessione del campo di ricerca con l'API fornita, 
    utilizzare Axios per effettuare richieste all'API.
-   Usando Vue, si può creare una funzione di ricerca che accetta un input dall'utente, 
-   effettua una richiesta all'API e visualizza i risultati nella sezione principale.(main).
+
+2.
+  crea un componente Vue che include un campo di input per l'utente, per inserire il nome del film da cercare e un pulsante per avviare la ricerca. 
+  Quando l'utente fa clic sul pulsante, viene chiamato il "metodo creato", che utilizza Axios per connettersi all'API e cercare i film corrispondenti
+   alla "query" dell'utente. 
+   I risultati della ricerca vengono quindi visualizzati nella pagina come una lista di titoli di film. 
+  
+  Gestire errori di API e la paginazione dei risultati di ricerca.
