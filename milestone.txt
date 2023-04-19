@@ -1,0 +1,25 @@
+MILESTONE 1:
+
+1.Iniziamo definendo il tema e lo stile generale dell'app. 
+Scegliamo colori, font e icone che siano coerenti.
+
+2.Creiamo l'header dell'app. 
+Questa sezione dovrebbe contenere il logo dell'app, un menu di navigazione e un campo di ricerca.
+
+3.Prosegui con la sezione principale dell'app. (MAIN)
+Qui dovremo mostrare i contenuti principali dell'app, come film e serie TV.
+Possiamo usare una griglia per organizzare i contenuti.(componente)
+
+4.Aggiungiamo la sezione FOOTER alla fine dell'app. 
+Qui possiamo includere link a pagine importanti come la sezione "novita","giochi","dowloand".
+
+5. Dobbiamo assicurarci che il layout sia responsive. 
+
+MILESTONE2
+ 
+ 1. Header-Main 
+
+   Per quanto riguarda la connessione del campo di ricerca con l'API fornita, 
+   utilizzare Axios per effettuare richieste all'API.
+   Usando Vue, si può creare una funzione di ricerca che accetta un input dall'utente, 
+   effettua una richiesta all'API e visualizza i risultati nella sezione principale.(main).
