@@ -29,10 +29,10 @@
         </ul>
         <div class="d-flex" role="search">
             <input v-model="query" class="form-control me-2" type="search" 
-            placeholder="Titolo,persona,generi" aria-label="Search">
+            placeholder="Titolo,persona,generi" aria-label="Search" @keyup.enter="searchMovies">
         </div>
         <button @click="searchMovies" class="btn btn-success"
-         type="submit" @keyup.enter="searchMovies">Cerca</button>
+         type="submit">Cerca</button>
         </div>
       </div>
      </nav>
@@ -57,5 +57,10 @@
 </script>
 
 <style lang="scss" scoped>
+header{
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
 
+}
 </style>

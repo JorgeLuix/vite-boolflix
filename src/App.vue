@@ -1,7 +1,7 @@
 <template>
   <div>
-    <HeaderComponent @search="searchMovies"></HeaderComponent>
-    <MoviesComponent :movies="movies"></MoviesComponent>
+    <HeaderComponent @search="searchMovies"/>
+    <MoviesComponent :movies="movies"/>
   </div>
 </template>
 
@@ -15,16 +15,35 @@ import MoviesComponent from './components/MoviesComponent.vue';
     components: { HeaderComponent, MoviesComponent },
     data() {
     return {
-      movies: []
+      movies: [],
+      
     }
   },
   methods: {
     searchMovies(query) {
-      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ae758d764b49bd80a077b2774e344530&language=en-US&query=${query}`)
-        .then(response => {
-          this.movies = response.data.results
-        })
-        .catch(error => console.log(error))
+      axios.get('https://api.themoviedb.org/3/search/movie', {
+        params: {
+          api_key: 'ae758d764b49bd80a077b2774e344530',
+          language: 'en-US',
+          query: query
+        }
+      }).then(response => {
+        this.movies = response.data.results;
+      }).catch(error => {
+        console.log(error);
+      });
+
+      axios.get('https://api.themoviedb.org/3/search/tv', {
+        params: {
+          api_key: 'ae758d764b49bd80a077b2774e344530',
+          language: 'en-US',
+          query: query
+        }
+      }).then(response => {
+        this.movies = this.movies.concat(response.data.results);
+      }).catch(error => {
+        console.log(error);
+      });
     }
   }
 }
