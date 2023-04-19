@@ -28,9 +28,11 @@
             </li>
         </ul>
         <div class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Titolo,persona,generi" aria-label="Search">
+            <input v-model="query" class="form-control me-2" type="search" 
+            placeholder="Titolo,persona,generi" aria-label="Search">
         </div>
-        <button class="btn btn-success" type="submit" @keyup="enter">Cerca</button>
+        <button @click="searchMovies" class="btn btn-success"
+         type="submit" @keyup.enter="searchMovies">Cerca</button>
         </div>
       </div>
      </nav>
@@ -39,6 +41,17 @@
 
 <script>
     export default {
+        name:'headerComponent',
+        data() {
+    return {
+      query: '',
+    }
+  },
+  methods: {
+    searchMovies() {
+      this.$emit('search', this.query)
+    }
+  }
         
     }
 </script>
