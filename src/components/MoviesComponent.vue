@@ -1,11 +1,11 @@
 <template>
     <div class="container">
       <div class="row">
-        <div class=" col-12 col-sm-6 col-md-4 col-lg-2 margin" v-for="movie in movies" :key="movie.id">
+        <div class=" col-12 col-sm-6 col-md-4 col-lg-2 margin g-1" v-for="movie in movies" :key="movie.id">
           <div class="card">
             <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top">
             <div class="card-body">
-              <h5 class="card-title">{{ movie.original_title }}</h5>
+              <h5 class="card-title">{{ movie.original_title }} sono movie</h5>
               <p class="card-text">{{ movie.title }}</p>
               <div class="d-flex justify-content-between">
                     <span class="card-text">{{ getRating(movie.vote_average) }} / 5</span>
