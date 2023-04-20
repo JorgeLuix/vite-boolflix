@@ -36,7 +36,7 @@ import TvShowsComponent from './components/TvShowsComponent.vue'
         console.log(error);
       });
 
-      //axios.get('https://api.themoviedb.org/3/search/tv', {
+      //axios.get('https://api.themoviedb.org/3/search/tv', { // chiamata per showTv
        // params: {
          //// api_key: 'ae758d764b49bd80a077b2774e344530',
          // language: 'en-US',
