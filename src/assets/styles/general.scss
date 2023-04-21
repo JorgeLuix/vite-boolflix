@@ -1,9 +1,12 @@
-$fa-font-path: './webfonts';
+
 
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
-
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
 @import 'bootstrap/scss/bootstrap';
+
+@import '/node_modules/flag-icons/css/flag-icons.min.css';
 
 body{
     background-color: rgb(37, 37, 37);

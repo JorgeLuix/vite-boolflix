@@ -2,9 +2,12 @@
     <header class="bg-black ">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand text-uppercase text-danger" href="#">boolflix</a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+          <a class="navbar-brand text-uppercase text-danger" href="#">
+            <img class="w-img" src="../../public/flags/Boolflix.png" alt="boolflix">
+          </a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon bg-white"></span>
          </button>
         <div class="collapse navbar-collapse text-muted" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -31,7 +34,7 @@
             <input v-model="query" class="form-control me-2" type="search" 
             placeholder="Titolo,persona,generi" aria-label="Search" @keyup.enter="searchMovies">
         </div>
-        <button @click="searchMovies" class="btn btn-success"
+        <button @click="searchMovies" class="btn btn-danger"
          type="submit">Cerca</button>
         </div>
       </div>
@@ -51,6 +54,7 @@
   methods: {
     searchMovies() {
       this.$emit('search', this.query)
+    
     }
   }
         
@@ -63,5 +67,8 @@ header{
   position: fixed;
   z-index: 1000;
 
+}
+.w-img{
+  width: 100px;
 }
 </style>
