@@ -1,5 +1,8 @@
 <template>
   <div>
+   <!-- <video controls width="500" autoplay>
+      <source src="/src/assets/video/boolflix.mp4" type="video/mp4">
+    </video>-->
     <HeaderComponent @search="searchMovies"/>
     <MoviesComponent :movies="movies"/>
   </div>

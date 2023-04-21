@@ -1,6 +1,7 @@
 <template>
+
     <header class="bg-black ">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-custom navbar-expand-sm">
         <div class="container-fluid">
           <a class="navbar-brand text-uppercase text-danger" href="#">
             <img class="w-img" src="../../public/flags/Boolflix.png" alt="boolflix">
