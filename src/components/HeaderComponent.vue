@@ -6,11 +6,13 @@
           <a class="navbar-brand text-uppercase text-danger" href="#">
             <img class="w-img" src="../../public/flags/Boolflix.png" alt="boolflix">
           </a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+           data-bs-target="#navbarSupportedContent"
+           aria-controls="navbarSupportedContent" aria-expanded="false"
+           aria-label="Toggle navigation" @click="showNavLinks = !showNavLinks">
               <span class="navbar-toggler-icon bg-white"></span>
          </button>
-        <div class="collapse navbar-collapse text-muted" id="navbarSupportedContent">
+        <div :class="{ 'collapse': !showNavLinks, 'navbar-collapse': true, 'text-muted': true }" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
             <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
@@ -48,6 +50,7 @@
         name:'headerComponent',
         data() {
     return {
+      showNavLinks: false,
       query: '',
       
     }

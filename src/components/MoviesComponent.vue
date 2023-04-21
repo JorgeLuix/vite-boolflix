@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-      <div class="row">
+      <div class="row g-4">
         <h1 class="text-white">movies</h1>
-        <div class="tv-shows col-12 col-sm-6 col-md-4 col-lg-2 margin g-1" v-for="movie in movies" :key="movie.id">
+        <div class="tv-shows col-12 col-sm-6 col-md-2 col-lg-3 margin g-1" v-for="movie in movies" :key="movie.id">
           <div class="card tv-show">
             <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top">
             <div class="card-body details">
@@ -13,10 +13,8 @@
                     <span class="card-text">Voto: </span>
                     <i class="fa solid fa-star rating" v-for="(n, index) in 5" :key="index" 
                     :class="(n <= getRating(movie.vote_average) ? 'rating' : 'fa-regular' )" ></i>
-                   
-                   <!-- <img :src="'/public/flags/' + flags + '.png'" :alt="language">-->
-                    <span class="card-text fi fi-{{ getFlag(movie.original_language) }}">
-                    {{ movie.original_language }}</span>
+                    <span class="card-text fi" :class="getFlag(movie.original_language)" >
+                    </span>
               </div>
             </div>
           </div>
@@ -48,16 +46,23 @@
       },
       
     },
-    getFlag(language) {
-        const flags = {
-          en: 'us',
-          fr: 'fr',
-          es: 'es',
-          de: 'de',
-          it: 'it'
+    computed: {
+      getFlag() {
+        return function(lang) {
+          const flags = {
+            en: 'gb',
+            es: 'es',
+            fr: 'fr',
+            ja: 'ja',
+            us: 'us',
+            it: 'it',
+            
+          };
+          const flag = flags[lang] || 'random';
+          return `fi-${flag}`;
         }
-        return flags[language] || 'unknown'
       }
+    }
     } 
   
 </script>
@@ -65,14 +70,15 @@
 .margin{
     margin-top: 80px;
 }
-.tv-shows {
+/*.tv-shows {
     display: flex;
     flex-wrap: nowrap;
    // overflow-x: auto;
    // -webkit-overflow-scrolling: touch;
-  }
+  }*/
   
 .tv-show {
+    
     position: relative;
     margin-right: 1rem;
     overflow: hidden;
@@ -80,6 +86,7 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     transition: all 0.2s;
   }
+
   
 .tv-show:hover {
     transform: scale(1.05);
