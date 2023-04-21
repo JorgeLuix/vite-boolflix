@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-      <div class="row g-4">
+      <div class="row">
         <h1 class="text-white">movies</h1>
-        <div class="tv-shows col-12 col-sm-6 col-md-2 col-lg-3 margin g-1" v-for="movie in movies" :key="movie.id">
+        <div class="tv-shows col-12 col-sm-6 col-md-4 col-lg-3 margin g-2" v-for="movie in movies" :key="movie.id">
           <div class="card tv-show">
             <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top">
             <div class="card-body details">
@@ -68,7 +68,8 @@
 </script>
 <style lang="scss" scoped>
 .margin{
-    margin-top: 80px;
+    margin-top: 40px;
+    
 }
 /*.tv-shows {
     display: flex;

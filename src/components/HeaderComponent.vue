@@ -1,16 +1,15 @@
 <template>
-
-    <header class="bg-black ">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-custom navbar-expand-sm">
+    <header class="bg-black">
+            <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <a class="navbar-brand text-uppercase text-danger" href="#">
-            <img class="w-img" src="../../public/flags/Boolflix.png" alt="boolflix">
+            <img class="w-img" src="/flags/Boolflix.png" alt="boolflix">
           </a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
            data-bs-target="#navbarSupportedContent"
            aria-controls="navbarSupportedContent" aria-expanded="false"
            aria-label="Toggle navigation" @click="showNavLinks = !showNavLinks">
-              <span class="navbar-toggler-icon bg-white"></span>
+              <span class="navbar-toggler-icon bg-white rounded"></span>
          </button>
         <div :class="{ 'collapse': !showNavLinks, 'navbar-collapse': true, 'text-muted': true }" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -52,16 +51,13 @@
     return {
       showNavLinks: false,
       query: '',
-      
     }
   },
   methods: {
     searchMovies() {
       this.$emit('search', this.query)
-    
     }
   }
-        
     }
 </script>
 
@@ -70,9 +66,14 @@ header{
   width: 100%;
   position: fixed;
   z-index: 1000;
-
 }
+
 .w-img{
   width: 100px;
+}
+@media only screen and (max-width: 992px) {
+  header {
+    background-color: rgb(3, 104, 137);
+  }
 }
 </style>
